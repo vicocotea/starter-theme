@@ -8,6 +8,8 @@
  * @since   Timber 0.1
  */
 
+$timber = new Timber\Timber();
+
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {
 		echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
@@ -142,3 +144,21 @@ class StarterSite extends Timber\Site {
 }
 
 new StarterSite();
+
+
+$lib_includes = [
+
+  'lib/image.php',
+  'lib/clean.php',
+  'lib/debug.php',
+  'lib/assets.php'
+
+];
+
+foreach ($lib_includes as $file) {
+  if (!$filepath = locate_template($file)) {
+    trigger_error(sprintf(__('Error locating %s for inclusion', 'sage'), $file), E_USER_ERROR);
+  }
+  require_once $filepath;
+}
+// unset($file, $filepath);
