@@ -8,9 +8,28 @@
  * @since   Timber 0.1
  */
 
+// <<<<<<< HEAD
 $timber = new Timber\Timber();
 
+// =======
+// /**
+//  * If you are installing Timber as a Composer dependency in your theme, you'll need this block
+//  * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
+//  * plug-in, you can safely delete this block. 
+//  */
+// $composer_autoload = __DIR__ . '/vendor/autoload.php';
+// if ( file_exists($composer_autoload) ) {
+// 	require_once( $composer_autoload );
+// 	$timber = new Timber\Timber();
+// }
+
+// /**
+//  * This ensures that Timber is loaded and available as a PHP class.
+//  * If not, it gives an error message to help direct developers on where to activate
+//  */
+// >>>>>>> 4cfeb05a5764cc1f03f76f70c5650f6e94573898
 if ( ! class_exists( 'Timber' ) ) {
+
 	add_action( 'admin_notices', function() {
 		echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
 	});
@@ -18,7 +37,6 @@ if ( ! class_exists( 'Timber' ) ) {
 	add_filter('template_include', function( $template ) {
 		return get_stylesheet_directory() . '/static/no-timber.html';
 	});
-
 	return;
 }
 
@@ -42,8 +60,8 @@ class StarterSite extends Timber\Site {
 	/** Add timber support. */
 	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
-		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
+		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
+		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		parent::__construct();
@@ -64,7 +82,7 @@ class StarterSite extends Timber\Site {
 	public function add_to_context( $context ) {
 		$context['foo'] = 'bar';
 		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
+		$context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['menu'] = new Timber\Menu();
 		$context['site'] = $this;
 		return $context;
