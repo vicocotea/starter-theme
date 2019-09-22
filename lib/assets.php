@@ -18,6 +18,24 @@ function assets() {
     wp_enqueue_script('comment-reply');
   }
 
+  $cssFilePath = glob( get_template_directory() . '/dist/css/main.*.css' );
+  if( count( $cssFilePath ) > 0 ){    
+    $cssFileURI = get_template_directory_uri() . '/dist/css/' . basename($cssFilePath[0]);
+    wp_enqueue_style( 'site_main_css', $cssFileURI ); 
+  }
+
+  $jsFilePath = glob( get_template_directory() . '/dist/js/app.*.js' );
+  if( count( $jsFilePath ) > 0 ){
+    $jsFileURI = get_template_directory_uri() . '/dist/js/' . basename($jsFilePath[0]);
+    wp_enqueue_script( 'main_js', $jsFileURI , null , null , true );
+  }
+
+  // $jsVendorsFilePath = glob( get_template_directory() . '/dist/js/vendors.*.js' );
+  // if( count( $jsVendorsFilePath ) > 0 ){
+  //   $jsVendorsFileURI = get_template_directory_uri() . '/dist/js/' . basename($jsVendorsFilePath[0]);
+  //   wp_enqueue_script( 'vendors_js', $jsVendorsFileURI , null , null , true );
+  // }
+
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 

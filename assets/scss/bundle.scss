@@ -1,0 +1,188 @@
+@import "common/variables";
+@import "common/ease";
+@import "common/font";
+@import "common/normalize";
+@import "common/flex-grid";
+@import "common/utils";
+
+@import "layouts/page";
+@import "layouts/single";
+@import "layouts/archive";
+
+@import "components/header";
+@import "components/footer";
+
+/*
+****************************************
+******************************************************************
+STARTER
+******************************************************************
+****************************************
+*/
+html{
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  margin: 0;
+  font-size: 62.5%;
+  font-family: $sans;
+}
+
+
+
+// mobile
+// @media screen and (min-width: 370px) {
+//   html {
+//     font-size: 67.5%;
+//   }
+// }
+// @media screen and (min-width: 420px) {
+//   html {
+//     font-size: 72.5%;
+//   }
+// }
+
+
+// // desktop
+// @media screen and (min-width: 769px) {
+//   html {
+//     font-size: 47.5%;
+//   }
+// }
+// @media screen and (min-width: 1080px) {
+//   html {
+//     font-size: 52.5%;
+//   }
+// }
+// @media screen and (min-width: 1280px) {
+//   html {
+//     font-size: 62.5%;
+//   }
+// }
+// @media screen and (min-width: 1500px) {
+//   html {
+//     font-size: 67.5%;
+//   }
+// }
+// @media screen and (min-width: 1750px) {
+//   html {
+//     font-size: 72.5%;
+//   }
+// }
+
+body {
+  height: 100%;
+  
+  margin: 0;
+  padding: 0;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 1.8rem;
+  line-height: 1.4;
+  color: $darkgrey;
+  width: 100%;
+
+  @media #{$bp-sm}{
+    font-size: 1.2rem;
+  }
+
+  > svg{
+    display: none;
+  }
+}
+
+
+// .barba-container{
+//   // &:nth-child(2){
+//     position: absolute;
+//     visibility: hidden;
+//   }
+// }
+
+::selection {
+  background: $salmon; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $salmon; /* Gecko Browsers */
+}
+
+*{
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+  // user-select :none !important;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+a{
+  color: currentColor;
+  text-decoration: none;
+}
+
+img{
+  display: block;
+  .cover{
+    object-fit: cover;
+  }
+}
+
+.padd{
+  padding: 5rem;
+  @media #{$bp-sm}{
+    padding: 3rem;
+  }
+
+  &--mobile{
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.serif{
+  font-family: $serif;
+}
+.sans{
+  font-family: $sans;
+}
+
+
+.black{
+  color: black;
+}
+.white{
+  color: white;
+}
+.salmon{
+  color: $salmon;
+}
+.darkgrey{
+  color: $darkgrey;
+}
+.lightgrey{
+  color: $lightgrey;
+}
+
+.bg--transp{
+  background-color: transparent;
+}
+.bg--black{
+  background-color: black;
+  color: white;
+}
+.bg--white{
+  background-color: white;
+}
+.bg--salmon{
+  background-color: $salmon;
+}
+.bg--darkgrey{
+  background-color: $darkgrey;
+  color: white;
+}
+.bg--lightgrey{
+  background-color: $lightgrey;
+}

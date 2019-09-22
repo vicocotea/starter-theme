@@ -1,0 +1,57 @@
+$salmon: #E6CBBA;
+$darkgrey: #1C1C1C;
+$lightgrey: #f5f5f5;
+
+$black: #000000;
+$white: #ffffff;
+
+$shadow: 20px 20px 40px 0px rgba(black, 0.1);
+$border: 1px solid rgba(black, 0.1);
+$paddmobile: 3.125vw;//20 / 640 * 100 + vw;
+$grid_size: calc( calc( 99vw - 142px - 1.5vw ) / 9 - 1.5vw );
+$grid_size_negative: calc( calc( 99vw - 142px - 1.5vw ) / -9 );
+$grid_size_negative3: calc( calc( 99vw - 142px - 1.5vw ) / -3 );
+$grid_size_2: calc( calc( calc( 99vw - 142px - 1.5vw ) / 9 - 1.5vw ) );
+// $grid_size: ( 99vw - 142px - 1.5vw ) / 9 - 1.5vw;
+
+$delay: 0.12s;
+$delay2: $delay * 2;
+$delay3: $delay * 3;
+$delay4: $delay * 4;
+
+$delaycol1: $delay * 1 + .15s;
+$delaycol2: $delay * 2 + .15s;
+$delaycol3: $delay * 3 + .15s;
+$delaycol4: $delay * 4 + .15s;
+
+$serif: 'tw20ty_serif', serif;;
+$sans: 'tw20ty_sans', 'Arial', sans-serif;
+
+$bp-xxs: "only screen and (max-width: 370px)";
+$bp-xs: "only screen and (max-width: 576px)";
+$bp-sm: "only screen and (max-width: 768px)";
+$bp-md: "only screen and (max-width: 1024px)"; 
+$bp-st: "only screen and (max-width: 1320px)";
+$bp-lg: "only screen and (max-width: 1600px)";
+$bp-xl: "only screen and (max-width: 1899px)";
+$bp-xxl: "only screen and (min-width: 1900px)";
+
+$bp-xxs-up: "only screen and (min-width: 371px)";
+$bp-xs-up: "only screen and (min-width: 577px)";
+$bp-sm-up: "only screen and (min-width: 769px)";
+$bp-md-up: "only screen and (min-width: 1025px)"; 
+$bp-st-up: "only screen and (min-width: 1321px)";
+$bp-lg-up: "only screen and (min-width: 1601px)";
+$bp-xl-up: "only screen and (min-width: 1900px)";
+
+$bp-xxs-only: "only screen and (max-width: 370px)";
+$bp-xs-only: "only screen and (min-width: 371px) and (max-width: 576px)";
+$bp-sm-only: "only screen and (min-width: 577px) and (max-width: 768px)";
+$bp-md-only: "only screen and (min-width: 769px) and (max-width: 1024px)"; 
+$bp-st-only: "only screen and (min-width: 1025px) and (max-width: 1320px)";
+$bp-lg-only: "only screen and (min-width: 1321px) and (max-width: 1600px)";
+$bp-xl-only: "only screen and (min-width: 1601px) and (max-width: 1899px)";
+$bp-xxl-only: "only screen and (min-width: 1900px)";
+
+$bp-xs-height: "only screen and (max-height: 600px) and (min-width: 900px)";
+$bp-sm-height: "only screen and (max-height: 740px) and (min-width: 900px)";
