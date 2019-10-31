@@ -9,6 +9,7 @@ add_action( 'after_setup_theme', function() {
     remove_action('wp_head',                'wlwmanifest_link');
     remove_action('wp_head',                'wp_shortlink_wp_head');
     remove_action('wp_head',                'rsd_link');
+    remove_action('wp_head',                'wp_resource_hints', 2 );
     
     add_theme_support('soil-clean-up');
     add_theme_support('soil-nav-walker');
