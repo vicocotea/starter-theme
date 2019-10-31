@@ -169,6 +169,7 @@ $lib_includes = [
   'lib/image.php',
   'lib/clean.php',
   'lib/debug.php',
+  'lib/cpt.php',
   'lib/assets.php'
 
 ];
