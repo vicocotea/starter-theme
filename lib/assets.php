@@ -60,3 +60,15 @@ function wp_dns_prefetch() {
   // ';
 }
 add_action('wp_head', __NAMESPACE__ . '\\wp_dns_prefetch', 0);
+
+
+function init_image_sizes(){
+
+  // remove_image_size('medium_large');
+
+  // add_image_size( 'small', 300, 0, false );
+  // add_image_size( 'medium_large', 768, 0, false );
+  // add_image_size( 'extra_large', 1440, 0, false );
+
+}
+add_action('init', __NAMESPACE__ . '\\init_image_sizes', 110);
